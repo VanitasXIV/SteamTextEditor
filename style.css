@@ -439,6 +439,13 @@ body {
     border-color: var(--steam-blue);
 }
 
+/* Success state for copy buttons */
+.btn-copied {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+    color: white !important;
+    border-color: #4CAF50 !important;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;
