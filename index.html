@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Review Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;600&family=Archivo:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>STEAM TEXT EDITOR</h1>
+            <p>Write reviews and guides without racking your brains about BBCode formatting</p>
+        </div>
+
+        <div class="editor-wrapper">
+            <!-- Editor Panel -->
+            <div class="panel">
+                <div class="panel-header">Editor</div>
+                
+                <div class="toolbar">
+                    <button class="toolbar-btn" onclick="insertTag('h1')" title="Heading 1">
+                        <span>H1</span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('h2')" title="Heading 2">
+                        <span>H2</span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('h3')" title="Heading 3">
+                        <span>H3</span>
+                    </button>
+                    
+                    <div class="divider"></div>
+                    
+                    <button class="toolbar-btn" onclick="insertTag('b')" title="Bold">
+                        <span><strong>B</strong></span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('i')" title="Italic">
+                        <span><em>I</em></span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('u')" title="Underline">
+                        <span><u>U</u></span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('strike')" title="Strikethrough">
+                        <span><s>S</s></span>
+                    </button>
+                    
+                    <div class="divider"></div>
+                    
+                    <button class="toolbar-btn" onclick="insertTag('spoiler')" title="Spoiler">
+                        <span>Spoiler</span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTag('noparse')" title="No parse">
+                        <span>NoParser</span>
+                    </button>
+                    
+                    <div class="divider"></div>
+                    
+                    <button class="toolbar-btn" onclick="insertHR()" title="Horizontal line">
+                        <span>HR</span>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertURL()" title="Link">
+                        <span>🔗 URL</span>
+                    </button>
+                </div>
+
+                <div class="editor-content">
+                    <textarea id="editor" placeholder="Write your review here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="panel">
+                <div class="panel-header">Preview</div>
+                <div class="editor-content">
+                    <div id="preview"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" style="margin-top: 2rem;">
+            <div class="actions">
+                <button class="btn-secondary" onclick="clearEditor()">Clear</button>
+                <button class="btn-secondary" onclick="copyToClipboard()">Copy BBCode</button>
+                <button class="btn-primary" onclick="copyToClipboard()">📋 Copy Review</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
