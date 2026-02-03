@@ -130,25 +130,28 @@ function clearEditor() {
     }
 }
 
-function copyToClipboard() {
+function copyToClipboard(event) {
     const bbcode = editor.value;
     if (!bbcode) {
         alert('Nothing to copy');
         return;
     }
     
+    const btn = event.target;
+    const originalText = btn.textContent;
+    
     navigator.clipboard.writeText(bbcode).then(() => {
-        const btn = event.target;
-        const originalText = btn.textContent;
+        // Add class and change text
+        btn.classList.add('btn-copied');
         btn.textContent = '✓ Copied!';
-        btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
         
         setTimeout(() => {
+            btn.classList.remove('btn-copied');
             btn.textContent = originalText;
-            btn.style.background = '';
         }, 2000);
     }).catch(err => {
-        alert('Error copying: ' + err);
+        console.error('Copy error:', err);
+        alert('Error copying to clipboard. Please try again.');
     });
 }
 
