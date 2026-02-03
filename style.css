@@ -73,6 +73,40 @@ body {
     letter-spacing: 0.05em;
 }
 
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--surface);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid rgba(26, 159, 255, 0.2);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    background: var(--surface-hover);
+    border-color: var(--steam-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 159, 255, 0.3);
+}
+
+.github-link svg {
+    transition: transform 0.3s ease;
+}
+
+.github-link:hover svg {
+    transform: rotate(360deg);
+}
+
 .editor-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -342,6 +376,46 @@ body {
     }
 }
 
+.footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+    background: var(--steam-dark);
+    border-top: 2px solid rgba(26, 159, 255, 0.2);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.disclaimer {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.footer-links a {
+    color: var(--steam-light-blue);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-links a:hover {
+    color: var(--steam-blue);
+    border-bottom-color: var(--steam-blue);
+}
+
 @media (max-width: 1024px) {
     .editor-wrapper {
         grid-template-columns: 1fr;
@@ -377,5 +451,18 @@ body {
     .btn-primary,
     .btn-secondary {
         width: 100%;
+    }
+
+    .footer {
+        margin-top: 2rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .disclaimer {
+        font-size: 0.8rem;
+    }
+
+    .footer-links {
+        font-size: 0.85rem;
     }
 }
