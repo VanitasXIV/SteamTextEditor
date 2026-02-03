@@ -1,5 +1,26 @@
 const editor = document.getElementById('editor');
 const preview = document.getElementById('preview');
+const themeToggle = document.getElementById('theme-toggle');
+
+// Theme toggle functionality
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
+// Initialize theme on page load
+initTheme();
+
+// Add event listener to theme toggle button
+themeToggle.addEventListener('click', toggleTheme);
 
 // Update preview in real-time
 editor.addEventListener('input', updatePreview);
