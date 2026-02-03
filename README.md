@@ -22,7 +22,7 @@ A web application for creating and formatting Steam reviews and guides using BBC
 
 ## 📝 Roadmap
 
-- [ ] Dark/Light theme toggle
+- [x] Dark/Light theme toggle
 - [ ] Export to markdown
 - [ ] Template system for quick reviews
 - [ ] Keyboard shortcuts
