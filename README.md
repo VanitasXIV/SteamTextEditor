@@ -14,8 +14,7 @@ A web application for creating and formatting Steam reviews and guides using BBC
 - **👁️ Real-time Preview** - See exactly how your review will look on Steam
 - **📋 One-Click Copy** - Copy BBCode to clipboard with a single click
 ## 🚀 Demo
-
-[View Live Demo](#) *https://taupe-monstera-071761.netlify.app/*
+ https://steamtextedit.netlify.app/
 
 
 
