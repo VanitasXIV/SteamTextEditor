@@ -2,7 +2,7 @@ const editor = document.getElementById('editor');
 const preview = document.getElementById('preview');
 const themeToggle = document.getElementById('theme-toggle');
 
-// Theme toggle functionality
+// Dark mode toggle
 function initTheme() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -16,13 +16,13 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
-// Initialize theme on page load
+// Default theme is dark
 initTheme();
 
 // Add event listener to theme toggle button
 themeToggle.addEventListener('click', toggleTheme);
 
-// Update preview in real-time
+// Update preview in real time
 editor.addEventListener('input', updatePreview);
 
 function insertTag(tag) {
@@ -78,10 +78,9 @@ function insertURL() {
 }
 
 function parseBBCode(text) {
-    // Escape HTML
     text = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
     
-    // Process noparse first
+    // check noparse first
     const noparseBlocks = [];
     text = text.replace(/\[noparse\](.*?)\[\/noparse\]/gi, (match, content) => {
         noparseBlocks.push(content);
@@ -153,7 +152,7 @@ function copyToClipboard() {
     });
 }
 
-// Initial example text
+// default value for editor field
 editor.value = `[h1]My Game Review[/h1]
 
 [h2]Positive Points[/h2]
