@@ -1,4 +1,4 @@
-# Steam Review Editor
+# Steam Text Editor
 
 A web application for creating and formatting Steam reviews using BBCode markup. Built with vanilla JavaScript, this editor provides a real-time preview and an intuitive interface for writing professional game reviews and guides.
 
